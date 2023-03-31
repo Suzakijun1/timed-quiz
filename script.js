@@ -30,7 +30,7 @@ qDiv.textContent = questions[i].q
 // append these to the answers div
 
 }
-// create a funtion to handle the button click
+// create a function to handle the button click
 function getAnswer(params) {
     // check the clicked button for the correct answer
 }
