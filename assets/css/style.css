@@ -51,3 +51,10 @@
     opacity: 0.6;
     cursor: pointer;
   }
+
+
+  /* css for scores.html */
+
+  .high-scores-title {
+    font-size: 30px;
+  }
