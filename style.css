@@ -10,7 +10,8 @@
 
   .view-high-scores {
     color: rgb(181, 20, 196);
-    padding-left: 10px;
+    background-color: transparent;
+    border: none;
   }
 
   .timer-text {
@@ -44,4 +45,9 @@
     color: white;
     padding: 10px;
     border-radius: 8px;
+    
+  }
+  button:hover {
+    opacity: 0.6;
+    cursor: pointer;
   }
