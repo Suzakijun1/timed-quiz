@@ -1,14 +1,22 @@
 var highScoreButton = document.querySelector(".view-high-scores");
 var startQuizButton = document.querySelector(".start-quiz");
+var timerElement = document.querySelector(".timer-count");
+var startButtonSound = document.querySelector("#button-sound");
 
 //function goToScores() {
 //    "otherpage.html = "./assets/scores.html";
 //}
 
-//highScoreButton.addEventListener("click",goToScores())
+startQuizButton.addEventListener("click",setTime());
+startQuizButton.addEventListener("click", function(){
+    startButtonSound.play();
+});
+ //   startButtonSound.play()
+//});
+function startSound() {
+    startButtonSound.play()
 
-
-
+};
 
 // We need to track which question we are currently on
 var QIndex = 0;
@@ -27,16 +35,16 @@ var questions = [
     }
 ]
 
-function displayQuiz() {
+//function displayQuiz() {
     //const quizContainer = document.getElementById("quiz-container");
-    for (let i = 0; i < questions.length; i++) {
-        console.log(`Question ${i + 1}: ${questions[i].question}`);
-        for (let j = 0; j < questions[i].options.length; j++) {
-            console.log(`  ${j + 1}. ${questions[i].options[j]}`);
-          }
-    }
+ //   for (let i = 0; i < questions.length; i++) {
+  //      console.log(`Question ${i + 1}: ${questions[i].question}`);
+   //     for (let j = 0; j < questions[i].answers.length; j++) {
+   //         console.log(`  ${j + 1}. ${questions[i].answers[j]}`);
+   //       }
+  //  }
 
-}
+//}
 
 
 
@@ -44,13 +52,22 @@ function displayQuiz() {
 
 
 // A function to make sure we can start from the very beginning
-start = (i) => {
+//start = (i) => {
 // put the time on the page
 // start ther timer
+function setTime() {
 var timer = setInterval(function(){
     time--;
+    timerElement.textContent = "Time: " + time;
+
+    if(time === 0) {
+        clearInterval(timer);
+    }
     // update the page with the time.
-},1000)
+},1000);
+}
+
+
 //qDiv.textContent = questions[i].q
 // loop over the questions[i].answers
 
@@ -58,13 +75,12 @@ var timer = setInterval(function(){
 
 // append these to the answers div
 
-}
+//}
 // create a function to handle the button click
-function getAnswer(params) {
+//function getAnswer(params) {
     // check the clicked button for the correct answer
-}
-start(QIndex)
+//}
+//start(QIndex)
 
 //function that checks if users answer is right
 
-const
