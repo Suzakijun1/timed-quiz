@@ -15,6 +15,7 @@ startQuizButton.addEventListener("click", function () {
   setTime();
   welcomeScreenPage.classList.add("hidden");
   questionPage.classList.remove("hidden");
+  showQuestion();
 });
 
 // We need to track which question we are currently on
@@ -24,13 +25,13 @@ var time = 70;
 var questions = [
   {
     q: "How to make a variable",
-    answers:{
-      a: 'var',
-      b: 'make',
+    answers: {
+      a: "var",
+      b: "make",
       c: "third",
       d: "four",
     },
-    
+
     correctAnswer: "a",
   },
   {
@@ -56,22 +57,24 @@ var questions = [
 
     correctAnswer: "c",
   },
-    
-   
-
-
 ];
 
-//function displayQuiz() {
-//const quizContainer = document.getElementById("quiz-container");
-//   for (let i = 0; i < questions.length; i++) {
-//      console.log(`Question ${i + 1}: ${questions[i].question}`);
-//     for (let j = 0; j < questions[i].answers.length; j++) {
-//         console.log(`  ${j + 1}. ${questions[i].answers[j]}`);
-//       }
-//  }
-
-//}
+function showQuestion() {
+  questionPage.innerHTML = `
+  <div class="question">${questions[QIndex].q}</div>
+  <button id="answer1" class = "answer-target">${questions[QIndex].answers.a}</button>
+  <button id="answer2" class = "answer-target">${questions[QIndex].answers.b}</button>
+  <button id="answer3" class = "answer-target">${questions[QIndex].answers.c}</button>
+  <button id="answer4" class = "answer-target">${questions[QIndex].answers.d}</button>
+  `;
+  var answerButtons = document.querySelectorAll(".answer-target");
+  for (let i = 0; i < answerButtons.length; i++) {
+    const button = answerButtons[i];
+    button.addEventListener("click", function () {
+      console.log("click a button");
+    });
+  }
+}
 
 // A function to make sure we can start from the very beginning
 //start = (i) => {
@@ -89,7 +92,6 @@ function setTime() {
   }, 1000);
 }
 
-qDiv.textContent = questions[i].q;
 // loop over the questions[i].answers
 
 // add the click handler to the answers button
