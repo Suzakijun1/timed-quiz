@@ -1,60 +1,65 @@
 * {
-    box-sizing: border-box;
-  }
+  box-sizing: border-box;
+}
 
-  .heading {
-    display: flex;
-    justify-content: space-between;
-    font-size: 30px;
-  }
+.heading {
+  display: flex;
+  justify-content: space-between;
+  font-size: 30px;
+}
 
-  .view-high-scores {
-    color: rgb(181, 20, 196);
-    background-color: transparent;
-    border: none;
-  }
+.view-high-scores {
+  color: rgb(181, 20, 196);
+}
 
-  .timer-text {
-    padding-right: 20px;
-  }
+.my-button {
+  background-color: transparent;
+  border: none;
+}
 
-  section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 70px;
-  }
+.timer-text {
+  padding-right: 20px;
+}
 
-  .coding-quiz-title {
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 70px;
+}
 
-    font-size: 40px;
+.coding-quiz-title {
 
-  }
+  font-size: 40px;
 
-  p {
-    
-    width: 100%;
-    margin-top: 10px;
-    margin-left: 10px;
-    text-align: center;
-    
-  }
+}
 
-  .start-quiz {
-    background-color: rgb(89, 10, 105);
-    color: white;
-    padding: 10px;
-    border-radius: 8px;
-    
-  }
-  button:hover {
-    opacity: 0.6;
-    cursor: pointer;
-  }
+p {
+
+  width: 100%;
+  margin-top: 10px;
+  margin-left: 10px;
+  text-align: center;
+
+}
+
+.start-quiz {
+  background-color: rgb(89, 10, 105);
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+
+}
+
+button:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
 
 
-  /* css for scores.html */
+/* css for scores.html */
 
-  .high-scores-title {
-    font-size: 30px;
-  }
+.high-scores-title {
+
+  font-size: 30px;
+}

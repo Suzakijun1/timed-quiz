@@ -1,3 +1,14 @@
+var highScoreButton = document.querySelector(".view-high-scores");
+
+//function goToScores() {
+//    "otherpage.html = "./assets/scores.html";
+//}
+
+//highScoreButton.addEventListener("click",goToScores())
+
+
+
+
 // We need to track which question we are currently on
 var QIndex = 0;
 var time = 70;
