@@ -1,7 +1,8 @@
 var highScoreButton = document.querySelector(".view-high-scores");
 var startQuizButton = document.querySelector(".start-quiz");
 var timerElement = document.querySelector(".timer-count");
-var startButtonSound = document.querySelector("#button-sound");
+var startButtonSound = document.querySelector("#start-sound");
+var wrongButtonSound = document.querySelector("#wrong-sound");
 
 //function goToScores() {
 //    "otherpage.html = "./assets/scores.html";
@@ -11,12 +12,7 @@ startQuizButton.addEventListener("click",setTime());
 startQuizButton.addEventListener("click", function(){
     startButtonSound.play();
 });
- //   startButtonSound.play()
-//});
-function startSound() {
-    startButtonSound.play()
 
-};
 
 // We need to track which question we are currently on
 var QIndex = 0;
