@@ -5,6 +5,7 @@ var startButtonSound = document.querySelector("#start-sound");
 var wrongButtonSound = document.querySelector("#wrong-sound");
 var welcomeScreenPage = document.querySelector("#welcome-screen");
 var questionPage = document.querySelector("#question-page");
+var endGamePage = document.querySelector("#end-game-screen");
 
 //function goToScores() {
 //    "otherpage.html = "./assets/scores.html";
@@ -21,6 +22,7 @@ startQuizButton.addEventListener("click", function () {
 // We need to track which question we are currently on
 var QIndex = 0;
 var time = 70;
+
 // The Questions should be stored in an array (Each One is an Object)
 var questions = [
   {
@@ -62,18 +64,41 @@ var questions = [
 function showQuestion() {
   questionPage.innerHTML = `
   <div class="question">${questions[QIndex].q}</div>
-  <button id="answer1" class = "answer-target">${questions[QIndex].answers.a}</button>
-  <button id="answer2" class = "answer-target">${questions[QIndex].answers.b}</button>
-  <button id="answer3" class = "answer-target">${questions[QIndex].answers.c}</button>
-  <button id="answer4" class = "answer-target">${questions[QIndex].answers.d}</button>
+  <button id="a" class = "answer-target">${questions[QIndex].answers.a}</button>
+  <button id="b" class = "answer-target">${questions[QIndex].answers.b}</button>
+  <button id="c" class = "answer-target">${questions[QIndex].answers.c}</button>
+  <button id="d" class = "answer-target">${questions[QIndex].answers.d}</button>
   `;
   var answerButtons = document.querySelectorAll(".answer-target");
   for (let i = 0; i < answerButtons.length; i++) {
     const button = answerButtons[i];
     button.addEventListener("click", function () {
-      console.log("click a button");
+      if (button.id !== questions[QIndex].correctAnswer) {
+        time -= 50;
+      }
+      if (time <= 0) {
+        endGame();
+      }
+      if (QIndex !== questions.length - 1) {
+        QIndex++;
+        showQuestion();
+      } else {
+        endGame();
+      }
     });
   }
+}
+
+var timer = null;
+
+function endGame() {
+  questionPage.classList.add("hidden");
+  endGamePage.classList.remove("hidden");
+  clearInterval(timer);
+  if (time < 0) {
+    time = 0;
+  }
+  timerElement.textContent = "Time: " + time;
 }
 
 // A function to make sure we can start from the very beginning
@@ -81,7 +106,7 @@ function showQuestion() {
 // put the time on the page
 // start ther timer
 function setTime() {
-  var timer = setInterval(function () {
+  timer = setInterval(function () {
     time--;
     timerElement.textContent = "Time: " + time;
 
@@ -93,16 +118,14 @@ function setTime() {
 }
 
 // loop over the questions[i].answers
-
-// add the click handler to the answers button
-
-// append these to the answers div
-
-//}
-// create a function to handle the button click
-//function getAnswer(params) {
-// check the clicked button for the correct answer
-//}
-//start(QIndex)
-
-//function that checks if users answer is right
+// format of score array
+// var scores =[
+// {
+//   initials: 'hi'
+//   score: 29
+// },
+// {
+//   initials: 'fdh'
+//   score: 39
+// }
+// ]
