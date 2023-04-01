@@ -57,6 +57,11 @@ button:hover {
 }
 
 
+.hidden {
+  display: none;
+} 
+
+
 /* css for scores.html */
 
 .high-scores-title {

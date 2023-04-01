@@ -8,9 +8,10 @@ var wrongButtonSound = document.querySelector("#wrong-sound");
 //    "otherpage.html = "./assets/scores.html";
 //}
 
-startQuizButton.addEventListener("click",setTime());
+
 startQuizButton.addEventListener("click", function(){
     startButtonSound.play();
+    setTime()
 });
 
 
@@ -64,7 +65,7 @@ var timer = setInterval(function(){
 }
 
 
-//qDiv.textContent = questions[i].q
+qDiv.textContent = questions[i].q
 // loop over the questions[i].answers
 
 // add the click handler to the answers button
