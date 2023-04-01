@@ -1,4 +1,5 @@
 var highScoreButton = document.querySelector(".view-high-scores");
+var startQuizButton = document.querySelector(".start-quiz");
 
 //function goToScores() {
 //    "otherpage.html = "./assets/scores.html";
@@ -25,6 +26,23 @@ var questions = [
         a:"function"
     }
 ]
+
+function displayQuiz() {
+    //const quizContainer = document.getElementById("quiz-container");
+    for (let i = 0; i < questions.length; i++) {
+        console.log(`Question ${i + 1}: ${questions[i].question}`);
+        for (let j = 0; j < questions[i].options.length; j++) {
+            console.log(`  ${j + 1}. ${questions[i].options[j]}`);
+          }
+    }
+
+}
+
+
+
+
+
+
 // A function to make sure we can start from the very beginning
 start = (i) => {
 // put the time on the page
@@ -33,7 +51,7 @@ var timer = setInterval(function(){
     time--;
     // update the page with the time.
 },1000)
-qDiv.textContent = questions[i].q
+//qDiv.textContent = questions[i].q
 // loop over the questions[i].answers
 
 // add the click handler to the answers button
@@ -46,3 +64,7 @@ function getAnswer(params) {
     // check the clicked button for the correct answer
 }
 start(QIndex)
+
+//function that checks if users answer is right
+
+const
