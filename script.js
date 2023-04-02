@@ -74,7 +74,7 @@ function showQuestion() {
     const button = answerButtons[i];
     button.addEventListener("click", function () {
       if (button.id !== questions[QIndex].correctAnswer) {
-        time -= 50;
+        time -= 10;
       }
       if (time <= 0) {
         endGame();
