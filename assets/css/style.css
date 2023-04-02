@@ -113,4 +113,5 @@ button:hover {
   padding-left: 30px;
   padding-right: 80px;
   width: 80px;
+  border-radius: 8px;
 }

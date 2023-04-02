@@ -63,11 +63,11 @@ var questions = [
 
 function showQuestion() {
   questionPage.innerHTML = `
-  <div class="question">${questions[QIndex].q}</div>
-  <button id="a" class = "answer-target">${questions[QIndex].answers.a}</button>
-  <button id="b" class = "answer-target">${questions[QIndex].answers.b}</button>
-  <button id="c" class = "answer-target">${questions[QIndex].answers.c}</button>
-  <button id="d" class = "answer-target">${questions[QIndex].answers.d}</button>
+  <div class="question">${questions[QIndex].q}</div><br>
+  <button id="a" class = "answer-target">${questions[QIndex].answers.a}</button><br>
+  <button id="b" class = "answer-target">${questions[QIndex].answers.b}</button><br>
+  <button id="c" class = "answer-target">${questions[QIndex].answers.c}</button><br>
+  <button id="d" class = "answer-target">${questions[QIndex].answers.d}</button><br>
   `;
   var answerButtons = document.querySelectorAll(".answer-target");
   for (let i = 0; i < answerButtons.length; i++) {
