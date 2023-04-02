@@ -6,6 +6,7 @@ var wrongButtonSound = document.querySelector("#wrong-sound");
 var welcomeScreenPage = document.querySelector("#welcome-screen");
 var questionPage = document.querySelector("#question-page");
 var endGamePage = document.querySelector("#end-game-screen");
+var submitButton = document.querySelector(".submit-button");
 
 //function goToScores() {
 //    "otherpage.html = "./assets/scores.html";
@@ -129,3 +130,12 @@ function setTime() {
 //   score: 39
 // }
 // ]
+
+function storeNameData() {
+  storeNameData.preventDefault;
+  var initials = document.querySelector("#input").value;
+  localStorage.setItem("#input", initials);
+}
+
+submitButton.addEventListener("click", storeNameData());
+console.log(storeNameData);
