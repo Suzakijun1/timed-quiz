@@ -73,7 +73,8 @@ button:hover {
 
 .all-done {
   font-weight: bold;
-  font-size: 20px;
+  font-size: 25px;
+  padding-right: 298px;
 }
 
 .submit-button {
@@ -82,4 +83,17 @@ button:hover {
   border-radius: 6px;
   padding-left: 10px;
   padding-right: 10px;
+}
+
+.score-text {
+  padding-right: 215px;
+  font-size: 25px;
+}
+
+.initals {
+  font-size: 25px;
+}
+
+#input {
+  padding-top: 9px;
 }
