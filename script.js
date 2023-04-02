@@ -100,6 +100,8 @@ function endGame() {
     time = 0;
   }
   timerElement.textContent = "Time: " + time;
+  document.querySelector(".score-text").textContent =
+    "Your final score is: " + time;
 }
 
 // A function to make sure we can start from the very beginning
@@ -133,9 +135,24 @@ function setTime() {
 
 function storeNameData() {
   storeNameData.preventDefault;
+  var highScore = time;
   var initials = document.querySelector("#input").value;
-  localStorage.setItem("#input", initials);
+  var highScore = {
+    highScore: highScore,
+    initials: initials,
+  };
+  localStorage.setItem("input", JSON.stringify(highScore));
+  //renderMessage();
 }
 
-submitButton.addEventListener("click", storeNameData());
-console.log(storeNameData);
+function renderMessage() {
+  var finalScore = JSON.parse(localStorage.getItem("input"));
+  document.querySelector(".score-container").textContent =
+    "Your final score is: " +
+    finalScore.highScore +
+    " , Your initials: " +
+    finalScore.initials;
+}
+
+//renderMessage();
+submitButton.addEventListener("click", storeNameData);
