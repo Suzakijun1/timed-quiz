@@ -97,3 +97,20 @@ button:hover {
 #input {
   padding-top: 9px;
 }
+
+/* css for question page */
+.question {
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.answer-target {
+  display:inline-block;
+  font-size: 20px;
+  color: white;
+  background-color: blueviolet;
+  align-items: flex-start;
+  padding-left: 30px;
+  padding-right: 80px;
+  width: 80px;
+}
