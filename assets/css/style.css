@@ -68,3 +68,18 @@ button:hover {
 
   font-size: 30px;
 }
+
+/* css for section - end game screen */
+
+.all-done {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.submit-button {
+  color: white;
+  background-color: rgb(89, 10, 105);
+  border-radius: 6px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
