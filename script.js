@@ -137,11 +137,15 @@ function storeNameData() {
   storeNameData.preventDefault;
   var highScore = time;
   var initials = document.querySelector("#input").value;
-  var highScore = {
+  var data = {
     highScore: highScore,
     initials: initials,
   };
-  localStorage.setItem("input", JSON.stringify(highScore));
+  localStorage.setItem("input", JSON.stringify(data));
+  // var saveDrop = localStorage.getItem("data").value;
+  //var dropHistory = JSON.parse(localStorage.getItem("data")) || [];
+  //dropHistory.push(saveDrop);
+  //localStorage.setItem("history", JSON.stringify(dropHistory));
   //renderMessage();
 }
 

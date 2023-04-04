@@ -69,6 +69,10 @@ button:hover {
   font-size: 30px;
 }
 
+.score-container {
+  background-color: rgb(190, 189, 189);
+}
+
 /* css for section - end game screen */
 
 .all-done {
