@@ -152,7 +152,12 @@ function renderMessage() {
     finalScore.highScore +
     " , Your initials: " +
     finalScore.initials;
+  renderMessage();
 }
 
 //renderMessage();
-submitButton.addEventListener("click", storeNameData);
+submitButton.addEventListener("click", function () {
+  storeNameData();
+  window.location.href = "./assets/scores.html";
+  renderMessage();
+});
