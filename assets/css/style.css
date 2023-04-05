@@ -65,9 +65,14 @@ button:hover {
 /* css for scores.html */
 
 .high-scores-title {
-
   font-size: 30px;
 }
+
+.score-container {
+    background-color: rgb(201, 201, 201);
+  }
+
+
 
 /* css for section - end game screen */
 
@@ -110,8 +115,6 @@ button:hover {
   color: white;
   background-color: blueviolet;
   align-items: flex-start;
-  padding-left: 30px;
-  padding-right: 80px;
-  width: 80px;
+  width: 200px;
   border-radius: 8px;
 }

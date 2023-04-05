@@ -52,7 +52,7 @@ var questions = [
   {
     q: "How can you add a comment in JavaScript? ",
     answers: {
-      a: "<!---->",
+      a: ".comment",
       b: "\\",
       c: "//",
       d: "/* */",
@@ -168,7 +168,7 @@ function renderMessage() {
     finalScore.highScore +
     " , Your initials: " +
     finalScore.initials;
-  renderMessage();
+  // renderMessage();
 }
 
 //renderMessage();
