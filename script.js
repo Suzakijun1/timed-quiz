@@ -27,35 +27,47 @@ var time = 70;
 // The Questions should be stored in an array (Each One is an Object)
 var questions = [
   {
-    q: "How to make a variable",
+    q: "A very useful tool for development and debugging is:",
     answers: {
-      a: "var",
-      b: "make",
-      c: "third",
-      d: "four",
+      a: "console log",
+      b: "css",
+      c: "div",
+      d: "stylesheet",
     },
 
     correctAnswer: "a",
   },
   {
-    q: "How to make a function",
+    q: "Arrays in Javascript can be used to store _____",
     answers: {
-      a: "one",
-      b: "two",
-      c: "three",
-      d: "four",
+      a: "booleans",
+      b: "other arrays",
+      c: "numbers and strings",
+      d: "all of the above",
     },
 
-    correctAnswer: "b",
+    correctAnswer: "d",
   },
 
   {
-    q: "How to make a word",
+    q: "How can you add a comment in JavaScript? ",
     answers: {
-      a: "hi",
-      b: "fun",
-      c: "three",
-      d: "four",
+      a: "<!---->",
+      b: "\\",
+      c: "//",
+      d: "/* */",
+    },
+
+    correctAnswer: "c",
+  },
+
+  {
+    q: "the condition in an if / else statement is enclosed within ____ ",
+    answers: {
+      a: "curly brackets",
+      b: "square brackets",
+      c: "parentheses",
+      d: "quotes",
     },
 
     correctAnswer: "c",
