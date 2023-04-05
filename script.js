@@ -8,10 +8,6 @@ var questionPage = document.querySelector("#question-page");
 var endGamePage = document.querySelector("#end-game-screen");
 var submitButton = document.querySelector(".submit-button");
 
-//function goToScores() {
-//    "otherpage.html = "./assets/scores.html";
-//}
-
 startQuizButton.addEventListener("click", function () {
   startButtonSound.play();
   setTime();
@@ -116,10 +112,7 @@ function endGame() {
     "Your final score is: " + time;
 }
 
-// A function to make sure we can start from the very beginning
-//start = (i) => {
 // put the time on the page
-// start ther timer
 function setTime() {
   timer = setInterval(function () {
     time--;
@@ -128,22 +121,8 @@ function setTime() {
     if (time === 0) {
       clearInterval(timer);
     }
-    // update the page with the time.
   }, 1000);
 }
-
-// loop over the questions[i].answers
-// format of score array
-// var scores =[
-// {
-//   initials: 'hi'
-//   score: 29
-// },
-// {
-//   initials: 'fdh'
-//   score: 39
-// }
-// ]
 
 function storeNameData() {
   storeNameData.preventDefault;
@@ -154,26 +133,47 @@ function storeNameData() {
     initials: initials,
   };
   localStorage.setItem("input", JSON.stringify(data));
-  // var saveDrop = localStorage.getItem("data").value;
-  //var dropHistory = JSON.parse(localStorage.getItem("data")) || [];
-  //dropHistory.push(saveDrop);
-  //localStorage.setItem("history", JSON.stringify(dropHistory));
-  //renderMessage();
 }
 
-function renderMessage() {
-  var finalScore = JSON.parse(localStorage.getItem("input"));
-  document.querySelector(".score-container").textContent =
-    "Your final score is: " +
-    finalScore.highScore +
-    " , Your initials: " +
-    finalScore.initials;
-  // renderMessage();
-}
+// input
+var createInput = document.createElement("input");
+createInput.setAttribute("type", "text");
+createInput.setAttribute("id", "initials");
+createInput.textContent = "";
+var done = document.querySelector(".all-done");
+done.appendChild(createInput);
 
-//renderMessage();
-submitButton.addEventListener("click", function () {
-  storeNameData();
-  window.location.href = "./assets/scores.html";
-  renderMessage();
+// submit
+var createSubmit = document.createElement("button");
+createSubmit.setAttribute("type", "submit");
+createSubmit.setAttribute("id", "Submit");
+createSubmit.textContent = "Submit";
+
+var submitButton1 = document.querySelector(".all-done");
+submitButton1.appendChild(createSubmit);
+
+// Event listener to capture initials and local storage for initials and score
+createSubmit.addEventListener("click", function () {
+  var initials = createInput.value;
+
+  if (initials === null) {
+    console.log("No value entered!");
+  } else {
+    var finalScore = {
+      initials: initials,
+      score: time,
+    };
+    console.log(finalScore);
+    var allScores = localStorage.getItem("allScores");
+    if (allScores === null) {
+      allScores = [];
+    } else {
+      allScores = JSON.parse(allScores);
+    }
+    allScores.push(finalScore);
+    var newScore = JSON.stringify(allScores);
+    localStorage.setItem("allScores", newScore);
+    // Travels to final page
+    window.location.replace("./assets/scores.html");
+  }
 });

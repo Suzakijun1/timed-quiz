@@ -1,13 +1,24 @@
-var submitButton = document.querySelector(".submit-button");
+var highScore = document.querySelector(".score-container");
+var clear = document.querySelector(".clear-high-score");
+var goBack = document.querySelector("go-back-button");
 
-function renderMessage() {
-  var finalScore = JSON.parse(localStorage.getItem("input"));
-  document.querySelector(".score-container").textContent =
-    "Your final score is: " +
-    finalScore.highScore +
-    " , Your initials: " +
-    finalScore.initials;
-  // document.getElementById("highScore").textContent = highScore;
+// Event listener to clear scores
+//clear.addEventListener("click", function () {
+//  localStorage.clear();
+//  location.reload();
+//});
+// Retreives local stroage
+var allScores = localStorage.getItem("allScores");
+allScores = JSON.parse(allScores);
+
+if (allScores !== null) {
+  for (var i = 0; i < allScores.length; i++) {
+    var createLi = document.createElement("li");
+    createLi.textContent = allScores[i].initials + " " + allScores[i].score;
+    highScore.appendChild(createLi);
+  }
 }
-renderMessage();
-//document.getElementById("highScore").textContent = highScore;
+// Event listener to move to index page
+//goBack.addEventListener("click", function () {
+// window.location.replace("./index.html");
+//});
